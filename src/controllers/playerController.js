@@ -51,4 +51,21 @@ const CrearJugador = async (req, res) => {
   }
 };
 
-export { obtenerTodos, CrearJugador, obtenerJugadorPorId };
+
+
+const eliminarJugador = async (req, res) => {
+  const jugadorId = parseInt(req.params.id, 10);
+
+  try {
+    const jugadorEliminado = await prisma.player.delete({
+      where: { id: jugadorId },
+    });
+
+    res.json({ mensaje: 'Jugador eliminado correctamente', jugadorEliminado });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ mensaje: 'Error al eliminar el jugador por ID' });
+  }
+};
+
+export { obtenerTodos, CrearJugador, obtenerJugadorPorId, eliminarJugador };
