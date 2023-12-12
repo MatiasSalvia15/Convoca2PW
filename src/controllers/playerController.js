@@ -33,7 +33,22 @@ const CrearJugador = async (req, res) => {
       res.status(500).json({ mensaje: 'Error al crear el jugador' });
     }
   };
-  
-  
 
-export {obtenerTodos, CrearJugador}
+
+  const obtenerJugadorPorId = async (req, res) => {
+  const jugadorId = parseInt(req.params.id, 10);
+
+  try {
+    const jugador = await prisma.player.findUnique({
+      where: { id: jugadorId },
+    });
+
+
+    res.json({ jugador });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ mensaje: 'Error al obtener el jugador por ID' });
+  }
+};
+
+export { obtenerTodos, CrearJugador, obtenerJugadorPorId };
