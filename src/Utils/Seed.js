@@ -15,7 +15,7 @@ const player = await prisma.player.createMany({
         { nombre: 'Guillermo', apellido: 'Varela', edad: 30, equipo: 'Flamengo' },
         { nombre: 'Matias', apellido: 'Olivera', edad: 26, equipo: 'Napoli' },
         { nombre: 'Manuel', apellido: 'Ugarte', edad: 22, equipo: 'PSG' },
-        { nombre: 'Rodrigo', apellido: 'Bentancour', edad: 26, equipo: 'Tottenham' },
+        { nombre: 'Rodrigo', apellido: 'Bentancur', edad: 26, equipo: 'Tottenham' },
         { nombre: 'Federico', apellido: 'Valverde', edad: 25, equipo: 'Real Madrid' },
         { nombre: 'Felipe', apellido: 'Carballo', edad: 27, equipo: 'Gremio' },
         { nombre: 'Agustin', apellido: 'Canobbio', edad: 25, equipo: 'Paranaense' },
